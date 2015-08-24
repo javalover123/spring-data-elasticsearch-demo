@@ -22,7 +22,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return id.toString();
+		return "User [id=" + id + ", name=" + name + "]";
 	}
 
 	public Long getId() {
