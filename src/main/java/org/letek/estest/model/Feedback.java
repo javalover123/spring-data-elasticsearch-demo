@@ -8,15 +8,15 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Document(indexName = "feedback1", type = "feedback")
+@Document(indexName = "feedback", type = "feedback")
 public class Feedback extends Searchable {
 
 	@Field(type = FieldType.Long)
 	private Long id;
 
 	@Field(
-			type = FieldType.Date, 
-			format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss"
+		type = FieldType.Date, 
+		format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss"
 	)
 	private String time;
 
@@ -40,12 +40,15 @@ public class Feedback extends Searchable {
 	@Field(type = FieldType.String)
 	private String content;
 
+	@Field(type = FieldType.Object)
+	private User user;
+
 	public Feedback() {
 		super();
 	}
 
 	public Feedback(Long id, String time, String uid, String ip, String plat,
-			String content) {
+			String content, User user) {
 		super();
 		this.id = id;
 		this.time = time;
@@ -53,6 +56,7 @@ public class Feedback extends Searchable {
 		this.ip = ip;
 		this.plat = plat;
 		this.content = content;
+		this.user = user;
 	}
 
 	@Override
@@ -124,6 +128,14 @@ public class Feedback extends Searchable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

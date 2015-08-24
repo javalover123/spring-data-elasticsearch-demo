@@ -3,6 +3,7 @@ package org.letek.estest.service;
 import java.util.List;
 
 import org.letek.estest.model.Feedback;
+import org.letek.estest.model.User;
 import org.letek.estest.repository.FeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +25,14 @@ public class FeedbackService {
 
 	public List<Feedback> findByContentAndIp(String content, String ip) {
 		return feedbackRepository.findByContentAndIpLike(content, ip);
+	}
+
+	public List<Feedback> findByUser(User user) {
+		return feedbackRepository.findByUser(user);
+	}
+
+	public List<Feedback> findByUserId(Long userId) {
+		return feedbackRepository.findByUserId(userId);
 	}
 
 	public Feedback findOne(long id) {
