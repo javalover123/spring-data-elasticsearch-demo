@@ -1,4 +1,4 @@
-# The betest demo for spring-data-elasticsearch, it shows save, find by page, find by tow parameters using like and @Query.
+# The best demo for spring-data-elasticsearch, it shows save, find by page, find by tow parameters using like and @Query.
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
