@@ -24,10 +24,12 @@ public class Feedback extends Searchable {
 	private String uid;
 
 	/** 没有使用FieldType.ip，是因为这种类型不能模糊搜索 */
+	/** Not using FieldType.ip，because this type can't support fuzzy search. */
 	@Field(index = FieldIndex.analyzed, type = FieldType.String)
 	private String ip;
 
 	/** 不序列化到_source */
+	/** Ignore this field when save to _source */
 	@JsonIgnore
 	private String area;
 

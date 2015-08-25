@@ -17,8 +17,10 @@ public interface FeedbackRepository extends ElasticsearchCrudRepository<Feedback
 
 	List<Feedback> findByContentAndIpLike(String content, String ip);
 
+	/** Find by Feedback.user, this can't get the correct result. */
 	List<Feedback> findByUser(User user);
 
+	/** Find by Feedback.user.id */
 	List<Feedback> findByUserId(Long userId);
 
 }
