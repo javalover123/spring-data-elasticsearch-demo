@@ -14,6 +14,12 @@ public interface FeedbackRepository extends
 
 	List<Feedback> findByContentAndIpLike(String content, String ip);
 
+	/** Find by Feedback.user, this can't get the correct result. */
+	List<Feedback> findByUser(User user);
+
+	/** Find by Feedback.user.id */
+	List<Feedback> findByUserId(Long userId);
+
 }
 
 # And custom date fomat, ip seaching, and ignore fields save to _source.
