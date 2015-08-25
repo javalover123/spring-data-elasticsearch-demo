@@ -9,3 +9,6 @@ buildNumber.properties
 .classpath
 .project
 *.prefs
+*.log
+*.st
+*.lock
